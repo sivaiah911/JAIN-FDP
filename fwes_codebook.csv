@@ -1,0 +1,14 @@
+variable,label,type,valid_values,missing_codes,notes
+id,Respondent ID,integer,"1-350, unique",none,Raw header is "ID"
+age,Age in years,integer,22-70,blank,Raw header is "Age"
+gender,Gender,category,"F, M, Other",blank,Raw header is "Gender"
+desig,Designation,category,"AP, ASP, Prof",blank,Raw header is " desig" (leading space)
+exp_yrs,Teaching experience (years),integer,"0-45; must be <= age - 20",blank,Consistency check against age
+jr1-jr6,Job resources items,ordinal,1-5 (SD ... SA),"blank, 99, -, NA",
+we1-we6,Work engagement items,ordinal,1-5 (SD ... SA),"blank, 99, -, NA","Raw header for we1 is ""WE1 "" (trailing space)"
+bo1-bo6,Burnout items,ordinal,1-5 (SD ... SA),"blank, 99, -, NA",
+bo2; bo5,Reverse-worded burnout items,ordinal,1-5; recode 6 - x,"blank, 99, -, NA",Positively worded; recode before scoring
+is1-is6,Intention to stay items,ordinal,1-5 (SD ... SA),"blank, 99, -, NA",
+att_chk,"Instructed item: ""Select Agree for this item""",ordinal,4 = pass,blank,Any other value = fail
+duration,Completion time in seconds,integer,greater than 0,none,From survey platform
+submitted,Submission timestamp,datetime,YYYY-MM-DD HH:MM:SS,none,From survey platform
